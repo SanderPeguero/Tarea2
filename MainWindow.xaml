@@ -1,0 +1,26 @@
+﻿<Window x:Class="Tarea2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tarea2"
+        mc:Ignorable="d"
+        Title="Registro de Roles" Height="400" Width="400">
+    <Grid>
+
+        <StackPanel Margin="16" Orientation="Vertical">
+            <TextBlock Text="Describa el Rol: "/>
+            <TextBox x:Name="DescripcionTextBox" Text=""/>
+            <DataGrid x:Name="DatosDataGrid" >
+            </DataGrid>
+            <StackPanel Margin="0,16,0,16" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Nuevo"/>
+                <Button Content="Editar"/>
+                <Button Content="Guardar" Click="GuardarButton"/>
+                <Button Content="Eliminar"/>
+           
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>
