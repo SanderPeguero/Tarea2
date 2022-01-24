@@ -13,8 +13,11 @@ namespace Tarea2
 
             using (var contexto = new Contexto())
             {
-                contexto.Roles.Add(rol);
-                paso = contexto.SaveChanges() > 0;
+               // if (rol.RolId != (contexto.Roles.Find(rol.RolId)).RolId && rol.Descripcion != (contexto.Roles.Find(rol.RolId)).Descripcion)
+               // {
+                    contexto.Roles.Add(rol);
+                    paso = contexto.SaveChanges() > 0;
+              //  }
 
             }
 
@@ -22,29 +25,29 @@ namespace Tarea2
         }
 
         //Reemplaza la descripcion de una clase Roles en la base de datos
-        public static bool Editar(Roles RolViejo, Roles RolNuevo)
+        public static bool Editar(Roles Rol)
         {
             bool paso = false;
 
             using (var contexto = new Contexto())
             {
-                contexto.Roles.Remove(RolViejo);
-                contexto.Roles.Add(RolNuevo);
+                contexto.Roles.Update(Rol);
 
                 paso = contexto.SaveChanges() > 0;
 
             }
 
-            return paso; 
+            return paso;
         }
         //Elimina de la base de datos una clase Roles
-        public static bool Eliminar(Roles rol)
+        public static bool Eliminar(int RolID)
         {
             bool paso = false;
 
             using (var contexto = new Contexto())
             {
-                contexto.Roles.Remove(rol);
+                Roles eliminar = contexto.Roles.Find(RolID);
+                contexto.Roles.Remove(eliminar);
                 paso = contexto.SaveChanges() > 0;
 
             }

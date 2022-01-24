@@ -36,7 +36,7 @@ namespace Tarea2
 
         private void NuevoButton()
         {
-            
+
 
         }
         private void GuardarButton(object sender, RoutedEventArgs e)
@@ -58,7 +58,8 @@ namespace Tarea2
             DateTime actual = new DateTime();
             Roles rol = new Roles(DescripcionTextBox.Text);
             rol.SetFechaCreacion(actual.ToString());
-            rol.RolId = RolIDTextBox.Text;
+            rol.RolId = int.Parse(RolIDTextBox.Text);
+
 
             var paso = RolesBll.Editar(rol);
 
@@ -71,6 +72,14 @@ namespace Tarea2
         private void EliminarButton(object sender, RoutedEventArgs e)
         {
 
+            var index = int.Parse(RolIDTextBox.Text);
+
+            var paso = RolesBll.Eliminar(index);
+
+            if (paso)
+                MessageBox.Show("Rol Eliminado con Exito!");
+            else
+                MessageBox.Show("No se pudo Eliminar el Rol");
         }
 
 

@@ -17,9 +17,9 @@
             </DataGrid>
             <StackPanel Margin="0,16,0,16" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="Nuevo"/>
-                <Button Content="Editar"/>
+                <Button Content="Editar" Click="EditarButton"/>
                 <Button Content="Guardar" Click="GuardarButton"/>
-                <Button Content="Eliminar"/>
+                <Button Content="Eliminar" Click="EliminarButton"/>
            
             </StackPanel>
         </StackPanel>
