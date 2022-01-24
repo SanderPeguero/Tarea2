@@ -11,6 +11,8 @@
         <StackPanel Margin="16" Orientation="Vertical">
             <TextBlock Text="Describa el Rol: "/>
             <TextBox x:Name="DescripcionTextBox" Text=""/>
+            <TextBlock Text="Para editar la descripcion de un rol escriba su ID aqui debajo"/>
+            <TextBox x:Name="RolIDTextBox" Text=""/>
             <DataGrid x:Name="DatosDataGrid" >
             </DataGrid>
             <StackPanel Margin="0,16,0,16" Orientation="Horizontal" HorizontalAlignment="Center">

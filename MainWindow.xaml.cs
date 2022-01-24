@@ -55,7 +55,17 @@ namespace Tarea2
 
         private void EditarButton(object sender, RoutedEventArgs e)
         {
+            DateTime actual = new DateTime();
+            Roles rol = new Roles(DescripcionTextBox.Text);
+            rol.SetFechaCreacion(actual.ToString());
+            rol.RolId = RolIDTextBox.Text;
 
+            var paso = RolesBll.Editar(rol);
+
+            if (paso)
+                MessageBox.Show("Rol Editado con Exito!");
+            else
+                MessageBox.Show("No se pudo Editar el Rol");
         }
 
         private void EliminarButton(object sender, RoutedEventArgs e)
